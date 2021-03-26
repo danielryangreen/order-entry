@@ -9,11 +9,11 @@ module.exports = function(app) {
   app.get('/', (req, res) => {
     db.Product.findAll().then(dbProduct => {
       console.log(dbProduct);
-      res.render('home', {product: dbProduct});
+      res.render('home', { product: dbProduct });
     });
   });
   
-  app.get("/employee", (req, res) => {
+  app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
