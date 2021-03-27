@@ -1,9 +1,31 @@
-<ul>
-  {{#each product}}
-    {{#dataValues}}
-      {{name}}
-      {{description}}
-      {{list_price}}
-    {{/dataValues}}
-  {{/each}}
-</ul>
+<br>
+<table class="table table-light table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each product}}
+      {{#dataValues}}
+        <tr>
+          <th scope="row">{{id}}</th>
+          <td><img src="/images/{{img_filename}}" alt="product image" style="width:100px;height:100px;"></td>
+          <td>{{name}}</td>
+          <td>{{description}}</td>
+          <td>{{list_price}}</td>
+          <td>
+            <button type="button" class="btn btn-primary btn-sm cart" data-id="{{id}}">Add to Cart</button>
+          </td>
+        </tr>
+      {{/dataValues}}
+    {{/each}}
+  </tbody>
+</table>
+
+<script src="/js/home.js"></script>
